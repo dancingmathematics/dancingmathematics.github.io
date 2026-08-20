@@ -434,6 +434,10 @@ a.card:hover h3 { color: var(--accent-dark); }
   .rows li { grid-template-columns: 1fr; gap: .1rem; }
   .rows .rows__meta { text-align: left; }
 }
+/* Compact variant: short label + short value, kept close together rather than
+   stretched to the full column width. Use for things like a short Languages list. */
+.rows--compact li { display: flex; gap: .6rem; padding: .5rem 0; }
+.rows--compact .rows__meta { text-align: left; white-space: nowrap; }
 
 /* Plain bulleted content lists */
 .tick { list-style: none; margin: 0; padding: 0; }
