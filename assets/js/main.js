@@ -82,4 +82,28 @@
   /* --- 5. Footer year --------------------------------------------------- */
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
+  /* --- 6. Course-list modals ---------------------------------------------
+     Markup contract:
+       <button type="button" class="link-btn" data-open-modal="courses-phd">See courses</button>
+       <dialog class="course-modal" id="courses-phd"> … <button class="course-modal__close">…</button> </dialog>
+  ---------------------------------------------------------------------- */
+  document.querySelectorAll("[data-open-modal]").forEach(function (btn) {
+    var dialog = document.getElementById(btn.getAttribute("data-open-modal"));
+    if (!dialog) return;
+    btn.addEventListener("click", function () {
+      if (typeof dialog.showModal === "function") {
+        dialog.showModal();
+      } else {
+        dialog.setAttribute("open", "");
+      }
+    });
+  });
+  document.querySelectorAll(".course-modal").forEach(function (dialog) {
+    dialog.querySelectorAll(".course-modal__close").forEach(function (closeBtn) {
+      closeBtn.addEventListener("click", function () { dialog.close(); });
+    });
+    dialog.addEventListener("click", function (e) {
+      if (e.target === dialog) dialog.close();
+    });
+  });
 })();
