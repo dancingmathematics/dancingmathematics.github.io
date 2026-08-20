@@ -314,8 +314,7 @@ hr {
 .idlist { margin: 1.2rem 0 0; padding: 0; list-style: none; font-size: .87rem; }
 .idlist li { padding: .38rem 0; border-top: 1px solid var(--line-soft); color: var(--ink-3); display: flex; gap: .6rem; }
 .idlist li:first-child { border-top: 0; }
-.idlist span { flex: none; width: 74px; font-weight: 600; color: var(--ink-2); font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; padding-top: .12rem; }
-
+.idlist span { flex: none; width: 112px; white-space: nowrap; font-weight: 600; color: var(--ink-2); font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; padding-top: .12rem; }
 /* --------------------------------------------------------------------------
    8. Cards
    -------------------------------------------------------------------------- */
