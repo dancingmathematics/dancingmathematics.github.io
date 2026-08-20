@@ -28,21 +28,32 @@ up either as a stale CV nobody revisits, or as a blog where the credentials are 
 
 | Page | Role | Update rhythm |
 |---|---|---|
-| **Home** | The thirty-second version. Who you are, three research threads, four recent papers. | Rarely |
+| **Home** | The thirty-second version, *plus* the full CV folded in below the fold — education, appointments, languages, professional memberships, media highlights, and references. | Rarely, except the CV block |
 | **Research** | The intellectual argument plus every active project strand. | A few times a year |
 | **GRiD** | The deep project page, migrated from the lab site. Your flagship. | When the project moves |
-| **Publications** | Complete, filterable, DOI-linked. | Per publication |
-| **Teaching** | Appointments, courses, 23 mentees, peer review, community service. | Per semester |
-| **Dance** | Practice statement, repertoire, full performance record. | Per performance |
+| **Publications** | Complete, filterable, DOI-linked — journal articles, proceedings, books, and every talk, workshop, and poster. | Per publication or presentation |
+| **Practice** | Teaching appointments and courses, 23 mentees, peer review, community service, and the full Balinese dance practice statement + performance record. | Per semester / per performance |
 | **Log** | Dated entries: talks, workshops, fieldwork, writing. | Whenever |
-| **CV** | Structured on-page CV + PDF download. | Per CV revision |
+
+*(Revised August 2026: the site originally shipped with separate Teaching, Dance, and CV pages —
+five nav tabs became six as Dance was split out, then the whole thing was restructured down to five
+tabs. Teaching, mentoring, service, and Dance now live together on one **Practice** page, since they
+are all the same category of thing — ongoing practice, as opposed to research output. The CV stopped
+being a standalone page with a downloadable PDF and became a section of Home instead: there is now
+exactly one CV, it is always current because it is the live page, and "Print / Save as PDF" on that
+section produces a paper copy on demand rather than a file that can drift out of date. The
+Fellowships/funding and Institutional-grants detail from the old CV page was deliberately left off
+Home — project-specific funding already appears on the GRiD and Research pages, and the full grant
+ledger felt like more detail than a homepage should carry. It can be added back as its own page or
+section if it turns out to be missed.)*
 
 Two decisions worth flagging:
 
-**Dance is a first-class page, not an "interests" footnote.** Your CV devotes three pages to
-performances, and your entire research program rests on that practice. Burying it would
-misrepresent the work. But the page opens with *why this is on a research website* — so a search
-committee reads it as scholarly grounding rather than as a hobby.
+**Dance is not an "interests" footnote — it opens with why it belongs on a research site.** Your CV
+devotes three pages to performances, and your entire research program rests on that practice.
+Burying it would misrepresent the work. The Practice page's dance section still opens with *why
+this is on a research website*, so a reader encounters it as scholarly grounding rather than as a
+hobby, even though it now shares a page with teaching and service instead of standing alone.
 
 **The GRiD project gets its own page, not a section.** It is the thing people will link to and cite.
 A standalone URL means the lab, conference organisers, and journalists can point at it directly.

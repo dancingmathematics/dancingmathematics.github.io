@@ -1,4 +1,4 @@
-# dancingmathematics.github.io — site source
+# ratihapsari.github.io — site source
 
 Personal academic website for Ratih Ayu Apsari, Ph.D.
 Plain HTML and CSS. No build step, no dependencies, no database. Every page is a file you can open
@@ -9,20 +9,18 @@ in a browser by double-clicking it.
 ## 1. What is in here
 
 ```
-index.html            Home
+index.html            Home — bio, research threads, selected publications, and the full CV
+                       (education, appointments, languages, memberships, media, references)
 research.html         Research & projects overview
 grid.html             GRiD project page (migrated from the EDRL lab site)
 publications.html     Full publication & presentation list, with filters
-teaching.html         Teaching, mentoring, peer review, community service
-dance.html            Balinese dance practice + performance record
+practice.html         Teaching, mentoring, peer review, community service, and Balinese dance
 log.html              Documentation log — the portfolio that accumulates over time
-cv.html               Structured CV page
 404.html              Shown when a URL does not exist
 assets/
   css/style.css       All styling. Design tokens are at the top.
   js/main.js          ~80 lines: mobile menu, filters, email obfuscation
   img/                Images. favicon.svg is here.
-  files/              Ratih-Ayu-Apsari-CV.pdf
 ```
 
 ---
@@ -97,13 +95,16 @@ section, edit the text. The filter buttons pick it up automatically from `data-c
 
 ### Adding a performance
 
-Open `dance.html`. Copy the first `<li data-cat="y2026">` block, paste it at the top of the list,
-edit it. When a new year starts, add a matching filter button.
+Open `practice.html`. Find `id="perflist"`, copy the first `<li data-cat="y2026">` block, paste it
+at the top of the list, edit it. When a new year starts, add a matching filter button.
 
-### Replacing the CV PDF
+### Updating the CV
 
-Drop the new file into `assets/files/` with the **same filename**
-(`Ratih-Ayu-Apsari-CV.pdf`). Every link on the site keeps working.
+There is no separate CV file or PDF to keep in sync. The full CV — education, appointments,
+languages, professional memberships, media highlights, and references — lives directly in
+`index.html` inside the section marked `<!-- ===================== CV / BACKGROUND ===================== -->`.
+Edit it there whenever something changes. Visitors can use the page's "Print / save as PDF" button
+to get a paper copy any time; it always reflects whatever is currently on the page.
 
 ### Adding images
 
@@ -143,7 +144,7 @@ else.
 
 **The navigation and footer are repeated in each HTML file.** That is the trade-off of having no
 build step. If you add a page, paste the `<nav>` block into it and add one `<a>` to every other
-page's nav. With eight pages this takes two minutes; it is the only repetitive part of the setup.
+page's nav. With seven pages this takes two minutes; it is the only repetitive part of the setup.
 
 ---
 
