@@ -478,6 +478,39 @@ a.card:hover h3 { color: var(--accent-dark); }
 .note--accent strong { color: var(--accent-dark); }
 .note p:last-child { margin-bottom: 0; }
 
+/* Plain-text trigger button (looks like a link, is a real <button>) */
+.link-btn {
+  background: none; border: 0; padding: 0; margin-top: .4rem;
+  font: inherit; font-size: .92rem; color: var(--blue);
+  text-decoration: underline; text-underline-offset: 2px; cursor: pointer;
+}
+.link-btn:hover { color: var(--accent); }
+
+/* Course-list modal (native <dialog>) */
+.course-modal {
+  border: 0; border-radius: var(--radius); padding: 0;
+  width: min(560px, 90vw); max-height: 80vh;
+  box-shadow: var(--shadow-md);
+}
+.course-modal::backdrop { background: rgba(25,27,31,.45); }
+.course-modal__head {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+  padding: 1.3rem 1.5rem 1rem; border-bottom: 1px solid var(--line);
+}
+.course-modal__head h3 { margin: 0; font-size: 1.15rem; }
+.course-modal__head p { margin: .2rem 0 0; color: var(--ink-3); font-size: .86rem; }
+.course-modal__close {
+  background: none; border: 0; font-size: 1.4rem; line-height: 1; color: var(--ink-3);
+  cursor: pointer; padding: .1rem .3rem; margin: -.2rem -.3rem 0 0;
+}
+.course-modal__close:hover { color: var(--accent); }
+.course-modal__body { padding: 1rem 1.5rem 1.5rem; overflow-y: auto; }
+.course-modal__group { font-weight: 650; font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; color: var(--blue-mid); margin: 1.2rem 0 .5rem; }
+.course-modal__group:first-child { margin-top: 0; }
+.course-modal__list { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 1.6rem; }
+.course-modal__list li { font-size: .92rem; color: var(--ink-2); padding: .3rem 0; break-inside: avoid; }
+@media (max-width: 560px) { .course-modal__list { columns: 1; } }
+
 /* --------------------------------------------------------------------------
    10. Page header band
    -------------------------------------------------------------------------- */
