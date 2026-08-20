@@ -63,7 +63,7 @@
 
         <div class="btn-row">
           <a class="btn btn--primary" href="research.html#projects">Explore active projects</a>
-          <a class="btn btn--ghost" href="#cv">More about me</a>
+          <a class="btn btn--ghost" href="#cv">View CV</a>
         </div>
       </div>
 
@@ -180,9 +180,10 @@
   <!-- ===================== CV / BACKGROUND ===================== -->
   <section class="section section--paper" id="cv">
     <div class="wrap">
-      <p class="eyebrow">About me</p>
+      <p class="eyebrow">Curriculum vitae</p>
       <h2 class="section-title">Background</h2>
-      <p class="lede prose">Get to know me from my journey.</p>
+      <p class="lede prose">The full record &mdash; education, appointments, languages, and
+      references &mdash; kept here instead of in a PDF that goes out of date.</p>
       <div class="btn-row">
         <button class="btn btn--ghost" type="button" onclick="window.print()">Print / save as PDF</button>
       </div>
@@ -197,15 +198,19 @@
             <p>Thesis: <em>Grounding geometry in culturally authentic movement practices: From
             attentional anchors to auxiliary lines in Balinese Dance</em>. Supervisor: Professor Dor
             Abrahamson.</p>
+            <button type="button" class="link-btn" data-open-modal="courses-phd">See courses &rarr;</button>
           </div>
         </li>
         <li>
-          <div class="timeline__when">Mar 2016</div>
+          <div class="timeline__when">2012/13, 2015/16</div>
           <div class="timeline__what">
             <h3>M.A. in Mathematics Education <span class="small muted">(with distinction)</span></h3>
             <p class="timeline__where">Universitas Pendidikan Ganesha, Indonesia</p>
-            <p>Thesis: <em>Teaching addition and subtraction using an empty number line to enhance
-            second-grade students&rsquo; ability in number sense</em>.</p>
+            <p>Coursework began in 2012/13, paused while completing the M.Sc. at Utrecht University
+            and Universitas Sriwijaya, then resumed and finished in 2015/16. Thesis: <em>Teaching
+            addition and subtraction using an empty number line to enhance second-grade
+            students&rsquo; ability in number sense</em>.</p>
+            <button type="button" class="link-btn" data-open-modal="courses-ma">See courses &rarr;</button>
           </div>
         </li>
         <li>
@@ -215,6 +220,7 @@
             <p class="timeline__where">Utrecht University, the Netherlands &amp; Universitas Sriwijaya, Indonesia</p>
             <p>Thesis: <em>Bridging between arithmetic and algebra: Using patterns to promote algebraic
             thinking</em>.</p>
+            <button type="button" class="link-btn" data-open-modal="courses-msc">See courses &rarr;</button>
           </div>
         </li>
         <li>
@@ -224,9 +230,180 @@
             <p class="timeline__where">Universitas Pendidikan Ganesha, Indonesia</p>
             <p>Thesis: <em>The impact of IKRAR learning model with local wisdom orientation on the
             students&rsquo; problem-solving ability</em>.</p>
+            <button type="button" class="link-btn" data-open-modal="courses-ba">See courses &rarr;</button>
           </div>
         </li>
       </ul>
+
+      <!-- ============== COURSE-LIST MODALS (education) ============== -->
+      <dialog class="course-modal" id="courses-phd">
+        <div class="course-modal__head">
+          <div>
+            <h3>Ph.D. coursework</h3>
+            <p>University of California, Berkeley &middot; 2021&ndash;2026</p>
+          </div>
+          <button type="button" class="course-modal__close" aria-label="Close">&times;</button>
+        </div>
+        <div class="course-modal__body">
+          <ul class="course-modal__list">
+            <li>GSI Pedagogy Workshop</li>
+            <li>Methods in Science &amp; Mathematics Teacher Education</li>
+            <li>First-Year Seminar</li>
+            <li>Introduction to Inquiry</li>
+            <li>Practicum</li>
+            <li>Seminar and Colloquium</li>
+            <li>Cultural Cognitive Development</li>
+            <li>Advanced Qualitative Methods</li>
+            <li>Educational Data Analysis II &amp; Lab</li>
+            <li>Early Socialization</li>
+            <li>Design-Based Research Forum</li>
+            <li>Neurodiversity &amp; Autism</li>
+            <li>Tangible User Interfaces</li>
+            <li>Academic Support</li>
+            <li>Discourse Analysis</li>
+            <li>Introduction to Cultural-Historical Activity Theory</li>
+            <li>Observation in Research</li>
+            <li>History &amp; Theory of New Media</li>
+            <li>Special Study</li>
+            <li>Philosophy of Mathematics</li>
+            <li>Korean Dance (Physical Education)</li>
+            <li>Elementary German 1 &amp; 2</li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog class="course-modal" id="courses-ma">
+        <div class="course-modal__head">
+          <div>
+            <h3>M.A. coursework</h3>
+            <p>Universitas Pendidikan Ganesha &middot; 2012&ndash;2016</p>
+          </div>
+          <button type="button" class="course-modal__close" aria-label="Close">&times;</button>
+        </div>
+        <div class="course-modal__body">
+          <ul class="course-modal__list">
+            <li>Foundation of Instruction</li>
+            <li>Philosophy of Science</li>
+            <li>English Language</li>
+            <li>Foundation of Education</li>
+            <li>Discrete Mathematics</li>
+            <li>Realistic Analysis</li>
+            <li>Educational Research Methodology</li>
+            <li>Mathematical Learning Methodology</li>
+            <li>Mathematics Learning Evaluation</li>
+            <li>Theory of Number</li>
+            <li>Linear Algebra and Its Application</li>
+            <li>Application of Analysis</li>
+            <li>Field Experience Program</li>
+            <li>Seminar on Learning Mathematics</li>
+            <li>Thesis</li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog class="course-modal" id="courses-msc">
+        <div class="course-modal__head">
+          <div>
+            <h3>M.Sc. coursework</h3>
+            <p>Utrecht University &amp; Universitas Sriwijaya &middot; 2013&ndash;2015</p>
+          </div>
+          <button type="button" class="course-modal__close" aria-label="Close">&times;</button>
+        </div>
+        <div class="course-modal__body">
+          <p class="course-modal__group">Utrecht University, the Netherlands</p>
+          <ul class="course-modal__list">
+            <li>Introduction to Science Education &amp; Communication Theories</li>
+            <li>Designing Science Education &amp; Communication</li>
+            <li>Research Methods in Science Education &amp; Communication</li>
+            <li>Integrative Practical</li>
+            <li>Historical Aspects of Mathematics</li>
+            <li>Geometry</li>
+            <li>Domain Specific Education (Realistic Mathematics Education)</li>
+            <li>Reasoning and Proof</li>
+            <li>Design Research &amp; Thesis (First Part)</li>
+            <li>Summer School &mdash; Mathematics &amp; Science Education</li>
+          </ul>
+          <p class="course-modal__group">Universitas Sriwijaya, Indonesia</p>
+          <ul class="course-modal__list">
+            <li>Mathematics Classroom Observation &amp; Product Development</li>
+            <li>Introduction to Realistic Mathematics Education</li>
+            <li>Problem Solving</li>
+            <li>Abstract Algebra</li>
+            <li>ICT in Mathematics Education</li>
+            <li>Research Internship in an Elementary School</li>
+            <li>Master&rsquo;s Thesis</li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog class="course-modal" id="courses-ba">
+        <div class="course-modal__head">
+          <div>
+            <h3>B.A. coursework</h3>
+            <p>Universitas Pendidikan Ganesha &middot; 2008&ndash;2012</p>
+          </div>
+          <button type="button" class="course-modal__close" aria-label="Close">&times;</button>
+        </div>
+        <div class="course-modal__body">
+          <ul class="course-modal__list">
+            <li>Religion</li>
+            <li>Introduction to Education</li>
+            <li>Trigonometry</li>
+            <li>Calculus I</li>
+            <li>Indonesian Language</li>
+            <li>The Five Principles (Pancasila)</li>
+            <li>Basic Introduction to Mathematics</li>
+            <li>Algebra</li>
+            <li>English Language</li>
+            <li>Numeral Theory</li>
+            <li>Computer Programming</li>
+            <li>Basic Statistics</li>
+            <li>Learning and Instruction</li>
+            <li>Civic Education</li>
+            <li>English for Science</li>
+            <li>Area Geometry</li>
+            <li>Calculus II</li>
+            <li>Educating Profession</li>
+            <li>School Mathematics</li>
+            <li>Real Analysis 1</li>
+            <li>Development of Learners</li>
+            <li>Teaching &amp; Learning Strategy</li>
+            <li>Space Geometry</li>
+            <li>Basic Social Science</li>
+            <li>Computer Application</li>
+            <li>Workshop</li>
+            <li>Linear Algebra II</li>
+            <li>Geometry of Space Analytic</li>
+            <li>Numerical Method</li>
+            <li>Real Analysis 2</li>
+            <li>Statistics of Mathematics I</li>
+            <li>Algebraic Structure 1</li>
+            <li>Advanced Calculus</li>
+            <li>Assessment &amp; Evaluation of Learning Outcome</li>
+            <li>Curriculum Study and Development</li>
+            <li>Financial Mathematics &amp; Linear Program</li>
+            <li>Management of Education</li>
+            <li>Instructional Media for Mathematics</li>
+            <li>Elementary Differential Equation</li>
+            <li>Transformational Geometry</li>
+            <li>Advanced Differential Equation</li>
+            <li>Discrete Mathematics</li>
+            <li>Seminar on Mathematics</li>
+            <li>Micro Teaching</li>
+            <li>Matrices &amp; Vector Spaces</li>
+            <li>Algebraic Structure 2</li>
+            <li>Statistics of Mathematics 2</li>
+            <li>Research Method of Mathematics Education</li>
+            <li>Field Experience Program</li>
+            <li>Complex Analysis</li>
+            <li>Linear Algebra I</li>
+            <li>Community Service &amp; Internship</li>
+            <li>Initial Value &amp; Boundary Conditions</li>
+            <li>Geometry of Area Analytic</li>
+            <li>Undergraduate Thesis</li>
+          </ul>
+        </div>
+      </dialog>
 
       <h3 style="margin-top:2.8rem">Professional appointments</h3>
       <ul class="rows">
@@ -242,8 +419,8 @@
         <div>
           <h3>Languages</h3>
           <ul class="rows rows--compact">
-            <li><span>Bahasa Indonesia</span><span class="rows__meta">&mdash; Native</span></li>
-            <li><span>Bahasa Bali</span><span class="rows__meta">&mdash; Conversational</span></li>
+            <li><span>Indonesian</span><span class="rows__meta">&mdash; Native</span></li>
+            <li><span>Balinese</span><span class="rows__meta">&mdash; Conversational</span></li>
             <li><span>English</span><span class="rows__meta">&mdash; Full professional</span></li>
             <li><span>German</span><span class="rows__meta">&mdash; Basic</span></li>
           </ul>
@@ -251,8 +428,8 @@
         <div>
           <h3>Professional memberships</h3>
           <ul class="tick">
-            <li>American Educational Research Association (AERA)</li>
-            <li>European Association for Research on Learning and Instruction (EARLI)</li>
+            <li>American Educational Research Association (AERA) &mdash; SIG Research in Mathematics Education</li>
+            <li>European Association for Research on Learning and Instruction (EARLI) &mdash; SIG 10 (Social Interaction in Learning and Instruction) &amp; SIG 25 (Educational Theory)</li>
             <li>International Group for the Psychology of Mathematics Education (PME)</li>
             <li>North American Chapter of PME (PME-NA)</li>
             <li>Indonesian Mathematical Society (IndoMS)</li>
@@ -288,8 +465,10 @@
       request.</p>
 
       <div class="note" style="margin-top:2.5rem">
-        <p><strong>Interested in working with me?</strong> Contact me at
-          <a class="js-mail" data-user="ra.apsari" data-domain="berkeley.edu"></a>.</p>
+        <p><strong>Keeping this current.</strong> Edit this section directly in
+        <code>index.html</code> whenever something changes &mdash; a new appointment, a finished
+        degree, a new reference. Because this page <em>is</em> the CV, there is nothing else to keep
+        in sync.</p>
       </div>
     </div>
   </section>
@@ -299,7 +478,8 @@
     <div class="wrap">
       <p class="eyebrow">Working record</p>
       <h2 class="section-title">Documentation log</h2>
-      <p class="lede prose">A dated record of activities and personal reflections.</p>
+      <p class="lede prose">A dated record of talks, workshops, fieldwork, and things I am thinking
+      about &mdash; kept here, on a site I control, rather than on a social platform.</p>
       <div class="btn-row">
         <a class="btn btn--ghost" href="log.html">Read the log</a>
       </div>
