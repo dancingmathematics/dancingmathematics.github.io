@@ -1,4 +1,4 @@
-# ratihapsari.github.io — site source
+# dancingeometry.github.io — site source
 
 Personal academic website for Ratih Ayu Apsari, Ph.D.
 Plain HTML and CSS. No build step, no dependencies, no database. Every page is a file you can open
