@@ -154,13 +154,13 @@ hr {
   background: var(--accent);
   border-radius: 2px;
 }
-h3.section-title { margin-top: 2rem; }
-
 .lede {
   font-size: clamp(1.05rem, 1.6vw, 1.18rem);
   line-height: 1.62;
   color: var(--ink-2);
 }
+
+.lede--compact { font-size: .88rem; }
 
 .muted { color: var(--ink-3); }
 .small { font-size: .89rem; }
@@ -384,9 +384,27 @@ a.card:hover h3 { color: var(--accent-dark); }
 .pub-apa__cite em { color: var(--ink); }
 .pub-apa__cite a { color: var(--blue); }
 .pub-apa__sep { color: var(--ink-3); text-indent: 0; }
+.pub-apa__link { margin: .55rem 0 .35rem; padding-left: 2em; font-size: .88rem; }
+.pub-apa__link a { color: var(--blue); }
 @media (max-width: 560px) {
   .pub-apa__cite { padding-left: 1.2em; text-indent: -1.2em; }
+  .pub-apa__link { padding-left: 1.2em; }
 }
+
+/* Publications page: year & segment sub-headings as accent pills */
+#publist h3.section-title {
+  display: inline-block;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -.005em;
+  color: #fff;
+  background: var(--accent);
+  padding: .5rem 1.2rem;
+  border-radius: 100px;
+  margin: 2.4rem 0 1.2rem;
+}
+#publist h3.section-title::after { display: none; }
 
 .timeline { list-style: none; margin: 0; padding: 0; }
 .timeline li {
@@ -454,6 +472,9 @@ a.card:hover h3 { color: var(--accent-dark); }
    stretched to the full column width. Use for things like a short Languages list. */
 .rows--compact li { display: flex; gap: .6rem; padding: .5rem 0; }
 .rows--compact .rows__meta { text-align: left; white-space: nowrap; }
+
+/* Job-title / media-highlight italics use the serif heading face, not bold */
+.rows li em { font-family: var(--serif); font-style: italic; font-weight: 400; }
 
 /* Plain bulleted content lists */
 .tick { list-style: none; margin: 0; padding: 0; }
