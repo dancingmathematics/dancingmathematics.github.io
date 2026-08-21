@@ -25,5 +25,8 @@ automatically (no HTML edits needed).
 - Apsari.etal.2020.Fraction.pdf
 - Apsari.etal.2020.Sociomathematicalnorms.pdf
 
+## Presentations
+-Apsari.Abrahamson.2025.EARLI
+
 Books, curriculum materials, and talks do not have a download button, so no
 file is needed for those.
