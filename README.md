@@ -1,4 +1,4 @@
-# dancingmathematics.github.io — site source
+# ratihapsari.github.io — site source
 
 Personal academic website for Ratih Ayu Apsari, Ph.D.
 Plain HTML and CSS. No build step, no dependencies, no database. Every page is a file you can open
@@ -90,8 +90,26 @@ paste it directly above the newest entry, remove the `<!--` and `-->`, and fill 
 
 ### Adding a publication
 
-Open `publications.html`. Copy any `<div class="pub" data-cat="…">` block, paste it into the right
-section, edit the text. The filter buttons pick it up automatically from `data-cat`.
+Open `publications.html`. Entries are grouped under year headings (`<h3 class="section-title"
+data-group-heading>2026</h3>`, etc.), newest first, with everything before 2021 collapsed into one
+"Before 2021" heading. Copy the nearest `<div class="pub-apa" data-cat="…">` block, paste it under
+the correct year (or add a new `<h3>` year heading if it is the first entry of a new year), and
+write the citation in APA style — bold your own name with `<strong>Apsari, R. A.</strong>` to match
+the rest of the page. The filter buttons at the top only apply to the Publications list and read
+`data-cat` (`journal`, `proceedings`, or `book`); leave that attribute off entries in the Talks &
+workshops or Posters lists further down, since those aren't filtered.
+
+**Adding a "Full article" download button.** Only journal articles and proceedings papers get one.
+Add this line right after the citation's `<p class="pub-apa__cite">…</p>`:
+
+```html
+<div class="btn-row--tight"><a class="btn btn--ghost btn--sm" href="assets/files/pubs/2027-my-new-paper.pdf">Full article (PDF)</a></div>
+```
+
+Then see `assets/files/pubs/README.md` for how to upload the matching PDF — the short version is:
+name your PDF exactly what the `href` says, upload it into `assets/files/pubs/` on GitHub the same
+way you'd edit any file (see §3 above), and the button works immediately. No other file needs to
+change.
 
 ### Adding a performance
 
