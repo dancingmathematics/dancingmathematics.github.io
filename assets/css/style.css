@@ -258,7 +258,9 @@ hr {
 .btn--primary:hover { background: var(--accent-dark); color: #fff; }
 .btn--ghost { background: transparent; color: var(--ink); border-color: var(--line); }
 .btn--ghost:hover { border-color: var(--accent); color: var(--accent-dark); background: var(--accent-tint); }
+.btn--sm { padding: .32rem .85rem; font-size: .82rem; }
 .btn-row { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.6rem; }
+.btn-row--tight { margin-top: .7rem; }
 
 .tag {
   display: inline-block;
@@ -373,6 +375,18 @@ a.card:hover h3 { color: var(--accent-dark); }
   .pub { grid-template-columns: 1fr; gap: .35rem; }
 }
 
+/* APA-style reference entries, grouped under a year heading */
+.pub-apa { padding: 1rem 0; border-top: 1px solid var(--line-soft); }
+.pub-apa:first-child { border-top: 0; }
+.pub-apa__cite { margin: 0; font-size: .96rem; line-height: 1.6; color: var(--ink-2); padding-left: 2em; text-indent: -2em; }
+.pub-apa__cite strong { color: var(--ink); }
+.pub-apa__cite em { color: var(--ink); }
+.pub-apa__cite a { color: var(--blue); }
+.pub-apa__sep { color: var(--ink-3); text-indent: 0; }
+@media (max-width: 560px) {
+  .pub-apa__cite { padding-left: 1.2em; text-indent: -1.2em; }
+}
+
 .timeline { list-style: none; margin: 0; padding: 0; }
 .timeline li {
   display: grid;
@@ -434,6 +448,7 @@ a.card:hover h3 { color: var(--accent-dark); }
   .rows li { grid-template-columns: 1fr; gap: .1rem; }
   .rows .rows__meta { text-align: left; }
 }
+
 /* Compact variant: short label + short value, kept close together rather than
    stretched to the full column width. Use for things like a short Languages list. */
 .rows--compact li { display: flex; gap: .6rem; padding: .5rem 0; }

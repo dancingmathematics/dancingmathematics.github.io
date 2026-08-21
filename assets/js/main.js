@@ -29,11 +29,25 @@
        </div>
        <ul id="some-list"> <li data-cat="journal"> … </li> </ul>
      An item matches if data-cat contains the filter word (space separated).
+
+     Group headings may nest one level deep (e.g. a type heading containing
+     several year sub-headings). Mark the outer heading with a plain
+     data-group-heading and inner sub-headings with data-group-heading="2";
+     a heading hides only when nothing visible remains beneath it, checking
+     inside its sub-headings too. Single-level pages need no change — every
+     data-group-heading defaults to level 1, so any next heading still ends
+     the group exactly as before.
   ---------------------------------------------------------------------- */
   document.querySelectorAll(".filters").forEach(function (bar) {
     var target = document.querySelector(bar.getAttribute("data-filter-target"));
     if (!target) return;
-    var items = Array.prototype.slice.call(target.children);
+    var items = Array.prototype.slice.call(target.children).filter(function (el) {
+      return !el.hasAttribute("data-group-heading");
+    });
+
+    function headingLevel(h) {
+      return Number(h.getAttribute("data-group-heading")) || 1;
+    }
 
     bar.addEventListener("click", function (e) {
       var btn = e.target.closest(".filter-btn");
@@ -50,10 +64,17 @@
         item.classList.toggle("is-hidden", !show);
       });
 
-      // Hide group headings that no longer have visible siblings
-      target.querySelectorAll("[data-group-heading]").forEach(function (h) {
+      // Hide group headings that no longer have visible content beneath
+      // them. Deepest headings first, so a parent heading's check can rely
+      // on its sub-headings' is-hidden state already being up to date.
+      var headings = Array.prototype.slice.call(target.querySelectorAll("[data-group-heading]"));
+      headings.sort(function (a, b) { return headingLevel(b) - headingLevel(a); });
+
+      headings.forEach(function (h) {
+        var hLevel = headingLevel(h);
         var next = h.nextElementSibling, any = false;
-        while (next && !next.hasAttribute("data-group-heading")) {
+        while (next) {
+          if (next.hasAttribute("data-group-heading") && headingLevel(next) <= hLevel) break;
           if (!next.classList.contains("is-hidden")) { any = true; break; }
           next = next.nextElementSibling;
         }
@@ -82,6 +103,7 @@
   /* --- 5. Footer year --------------------------------------------------- */
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
+
   /* --- 6. Course-list modals ---------------------------------------------
      Markup contract:
        <button type="button" class="link-btn" data-open-modal="courses-phd">See courses</button>
@@ -102,6 +124,7 @@
     dialog.querySelectorAll(".course-modal__close").forEach(function (closeBtn) {
       closeBtn.addEventListener("click", function () { dialog.close(); });
     });
+    // Click on the backdrop (outside the inner panel) closes it too.
     dialog.addEventListener("click", function (e) {
       if (e.target === dialog) dialog.close();
     });
