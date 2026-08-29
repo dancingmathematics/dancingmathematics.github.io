@@ -448,6 +448,7 @@ a.card:hover h3 { color: var(--accent-dark); }
 .entry__gallery {
   display: flex;
   gap: .5rem;
+  max-width: 480px;
   margin: 1.1rem 0 .3rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -487,7 +488,7 @@ a.card:hover h3 { color: var(--accent-dark); }
    gallery with more than one photo. .entry__gallery-wrap is the non-scrolling
    frame the buttons are pinned to; .entry__gallery itself keeps scrolling
    underneath them. */
-.entry__gallery-wrap { position: relative; }
+.entry__gallery-wrap { position: relative; max-width: 480px; }
 .entry__gallery-nav {
   position: absolute; top: 50%; z-index: 2;
   transform: translateY(-50%);
