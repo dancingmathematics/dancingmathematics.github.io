@@ -475,7 +475,7 @@ a.card:hover h3 { color: var(--accent-dark); }
 .entry__gallery {
   display: flex;
   gap: .5rem;
-  max-width: 480px;
+  max-width: 600px;
   margin: 1.1rem 0 .3rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
