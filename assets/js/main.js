@@ -134,7 +134,53 @@
     a.target = "_blank";
     a.rel = "noopener";
   });
-     /* --- 8. Discourage saving log photos (casual deterrent only) ---------- */
+      /* --- 8. Gallery prev/next buttons --------------------------------------
+     Wraps every multi-photo .entry__gallery in a non-scrolling frame and
+     adds two real <button> controls: click "next" to slide one photo to
+     the right, "prev" to slide back. Either button hides itself when
+     there's nowhere further to go in that direction. Runs automatically —
+     no HTML changes needed in log.html, ever.
+  ---------------------------------------------------------------------- */
+  document.querySelectorAll(".entry__gallery").forEach(function (gallery) {
+    if (gallery.children.length < 2) return; // nothing to page through
+
+    var wrap = document.createElement("div");
+    wrap.className = "entry__gallery-wrap";
+    gallery.parentNode.insertBefore(wrap, gallery);
+    wrap.appendChild(gallery);
+
+    var prev = document.createElement("button");
+    prev.type = "button";
+    prev.className = "entry__gallery-nav entry__gallery-nav--prev";
+    prev.setAttribute("aria-label", "Previous photo");
+
+    var next = document.createElement("button");
+    next.type = "button";
+    next.className = "entry__gallery-nav entry__gallery-nav--next";
+    next.setAttribute("aria-label", "Next photo");
+
+    wrap.appendChild(prev);
+    wrap.appendChild(next);
+
+    function update() {
+      var max = gallery.scrollWidth - gallery.clientWidth;
+      prev.hidden = gallery.scrollLeft <= 4;
+      next.hidden = gallery.scrollLeft >= max - 4;
+    }
+
+    prev.addEventListener("click", function () {
+      gallery.scrollBy({ left: -gallery.clientWidth, behavior: "smooth" });
+    });
+    next.addEventListener("click", function () {
+      gallery.scrollBy({ left: gallery.clientWidth, behavior: "smooth" });
+    });
+    gallery.addEventListener("scroll", update);
+    update();
+  });
+
+  /* --- 9. Discourage saving log photos (casual deterrent only; see CSS
+     .entry__gallery img for the pointer-events/user-select/drag rules that
+     do most of the work — this just blocks the right-click menu too) ----- */
   document.querySelectorAll(".entry__gallery").forEach(function (gallery) {
     gallery.addEventListener("contextmenu", function (e) { e.preventDefault(); });
   });
