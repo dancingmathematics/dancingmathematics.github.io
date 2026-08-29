@@ -129,4 +129,9 @@
       if (e.target === dialog) dialog.close();
     });
   });
+     /* --- 7. Full-article PDF links open in a new tab ---------------------- */
+  document.querySelectorAll(".pub-apa__link a").forEach(function (a) {
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
 })();
