@@ -477,21 +477,34 @@ a.card:hover h3 { color: var(--accent-dark); }
   color: #fff;
   background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0) 75%);
 }
-/* "Swipe for more" hint — a soft arrow-in-circle on every photo except the
-   last one, so it disappears once there's nothing left to slide to. */
-.entry__gallery figure:not(:last-child)::after {
-  content: "";
-  position: absolute; top: 50%; right: .6rem;
-  width: 34px; height: 34px;
+/* Clickable prev/next controls, added automatically by main.js around any
+   gallery with more than one photo. .entry__gallery-wrap is the non-scrolling
+   frame the buttons are pinned to; .entry__gallery itself keeps scrolling
+   underneath them. */
+.entry__gallery-wrap { position: relative; }
+.entry__gallery-nav {
+  position: absolute; top: 50%; z-index: 2;
   transform: translateY(-50%);
-  border-radius: 50%;
+  width: 34px; height: 34px;
+  border: 0; border-radius: 50%;
   background-color: rgba(0, 0, 0, .35);
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='9 6 15 12 9 18'/></svg>");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 14px 14px;
-  pointer-events: none;
+  cursor: pointer;
+  transition: background-color .15s ease;
 }
+.entry__gallery-nav:hover { background-color: rgba(0, 0, 0, .55); }
+.entry__gallery-nav[hidden] { display: none; }
+.entry__gallery-nav--prev {
+  left: .6rem;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='15 6 9 12 15 18'/></svg>");
+}
+.entry__gallery-nav--next {
+  right: .6rem;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='9 6 15 12 9 18'/></svg>");
+}
+
 /* Filter bar */
 .filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.8rem; }
 .filter-btn {
