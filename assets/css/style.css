@@ -470,6 +470,28 @@ a.card:hover h3 { color: var(--accent-dark); }
   -webkit-user-drag: none;
   pointer-events: none;
 }
+.entry__gallery figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: .5rem .75rem .55rem;
+  font-size: .78rem;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0) 75%);
+}
+/* "Swipe for more" hint — a soft arrow-in-circle on every photo except the
+   last one, so it disappears once there's nothing left to slide to. */
+.entry__gallery figure:not(:last-child)::after {
+  content: "";
+  position: absolute; top: 50%; right: .6rem;
+  width: 34px; height: 34px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .35);
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='9 6 15 12 9 18'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 14px;
+  pointer-events: none;
+}
 /* Filter bar */
 .filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.8rem; }
 .filter-btn {
