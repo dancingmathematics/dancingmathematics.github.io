@@ -425,6 +425,34 @@ a.card:hover h3 { color: var(--accent-dark); }
 @media (max-width: 620px) {
   .timeline li { grid-template-columns: 1fr; gap: .3rem; }
 }
+/* Documentation log — two-column layout. Entries sit in a column just wide
+   enough for the photo gallery; a sticky announcements panel holds up to
+   2 current items and stays in view while the log scrolls past it. */
+.log-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 540px) minmax(260px, 320px);
+  gap: clamp(2rem, 4vw, 3.2rem);
+  align-items: start;
+}
+.log-layout__aside { position: sticky; top: 90px; }
+@media (max-width: 900px) {
+  .log-layout { grid-template-columns: 1fr; }
+  .log-layout__aside { position: static; margin-top: 2.4rem; }
+}
+
+.announce {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.4rem;
+  background: var(--paper);
+}
+.announce__item + .announce__item {
+  margin-top: 1.4rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+}
+.announce__item h4 { margin: .45rem 0 .3rem; }
+.announce__item p { margin: 0; font-size: .9rem; color: var(--ink-2); }
 
 /* Documentation log entries */
 .entry {
