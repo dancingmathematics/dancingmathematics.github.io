@@ -430,16 +430,15 @@ a.card:hover h3 { color: var(--accent-dark); }
    2 current items and stays in view while the log scrolls past it. */
 .log-layout {
   display: grid;
-  grid-template-columns: minmax(0, 540px) minmax(260px, 320px);
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
   gap: clamp(2rem, 4vw, 3.2rem);
   align-items: start;
 }
 .log-layout__aside { position: sticky; top: 90px; }
-@media (max-width: 900px) {
+@media (max-width: 720px) {
   .log-layout { grid-template-columns: 1fr; }
   .log-layout__aside { position: static; margin-top: 2.4rem; }
 }
-
 .announce {
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -516,7 +515,7 @@ a.card:hover h3 { color: var(--accent-dark); }
    gallery with more than one photo. .entry__gallery-wrap is the non-scrolling
    frame the buttons are pinned to; .entry__gallery itself keeps scrolling
    underneath them. */
-.entry__gallery-wrap { position: relative; max-width: 480px; }
+.entry__gallery-wrap { position: relative; max-width: 600px; }
 .entry__gallery-nav {
   position: absolute; top: 50%; z-index: 2;
   transform: translateY(-50%);
