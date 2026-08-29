@@ -9,7 +9,7 @@ automatically (no HTML edits needed).
 ## Journal articles
 - Apsari.Abrahamson.2026.ESM.Sign-tool.pdf
 - Apsari.Abrahamson.2026.IJMEST.Dancing geometry.pdf
-- Abrahamson.Lomos.Hilkey.Apsari.Palatnik.2026.LCSI.Heteroperception.pdf
+- Abrahamson.Lomos.Hilkey.Apsari.Palatnik.2026.LCSI.Heteroperception_compressed.pdf
 - Apsari.etal.2021.Tadris.Addition-subtraction.pdf
 - Ndiung.Sariyasa.Jehadus.Apsari.2021.IJI.RME.pdf
 - Apsari.etal.2020.Elemen.Distance learning.pdf
