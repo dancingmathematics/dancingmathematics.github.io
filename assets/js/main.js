@@ -134,4 +134,8 @@
     a.target = "_blank";
     a.rel = "noopener";
   });
+     /* --- 8. Discourage saving log photos (casual deterrent only) ---------- */
+  document.querySelectorAll(".entry__gallery").forEach(function (gallery) {
+    gallery.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+  });
 })();
