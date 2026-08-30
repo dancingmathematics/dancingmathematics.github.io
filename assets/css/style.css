@@ -429,15 +429,16 @@ a.card:hover h3 { color: var(--accent-dark); }
    enough for the photo gallery; a sticky announcements panel holds up to
    2 current items and stays in view while the log scrolls past it. */
 .log-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
-  gap: clamp(2rem, 4vw, 3.2rem);
-  align-items: start;
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1.6rem, 4vw, 3.2rem);
 }
-.log-layout__aside { position: sticky; top: 90px; }
+.log-layout__main { flex: 1 1 auto; min-width: 0; max-width: 640px; }
+.log-layout__aside { flex: 0 0 300px; width: 300px; position: sticky; top: 90px; }
 @media (max-width: 720px) {
-  .log-layout { grid-template-columns: 1fr; }
-  .log-layout__aside { position: static; margin-top: 2.4rem; }
+  .log-layout { flex-direction: column; }
+  .log-layout__main { max-width: none; }
+  .log-layout__aside { position: static; width: 100%; flex: 0 0 auto; margin-top: 2.4rem; }
 }
 .announce {
   border: 1px solid var(--line);
@@ -450,6 +451,14 @@ a.card:hover h3 { color: var(--accent-dark); }
   padding-top: 1.4rem;
   border-top: 1px solid var(--line);
 }
+.announce__item img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: calc(var(--radius) - 2px);
+  margin: .6rem 0 .5rem;
+  display: block;
+}
 .announce__item h4 { margin: .45rem 0 .3rem; }
 .announce__item p { margin: 0; font-size: .9rem; color: var(--ink-2); }
 
@@ -461,6 +470,7 @@ a.card:hover h3 { color: var(--accent-dark); }
   margin-bottom: 1.15rem;
   background: var(--white);
 }
+.entry.is-capped { display: none; }
 .entry__head { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-bottom: .6rem; }
 .entry__date {
   font-size: .8rem; font-weight: 650; letter-spacing: .07em; text-transform: uppercase;
@@ -503,6 +513,9 @@ a.card:hover h3 { color: var(--accent-dark); }
   display: inline-block;
   width: fit-content;
   max-width: calc(100% - 2rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: .2rem .5rem;
   border-radius: 5px;
   font-size: .74rem;
