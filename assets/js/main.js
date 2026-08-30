@@ -184,4 +184,45 @@
   document.querySelectorAll(".entry__gallery").forEach(function (gallery) {
     gallery.addEventListener("contextmenu", function (e) { e.preventDefault(); });
   });
+     /* --- 10. Documentation log: show the 10 most recent entries, with a
+     "See more" button that reveals 10 more each click. The cap only
+     applies while the "All" filter is active — picking any other filter
+     shows every matching entry regardless of how many are revealed.
+  ---------------------------------------------------------------------- */
+  (function () {
+    var list = document.getElementById("loglist");
+    var moreBtn = document.getElementById("log-more");
+    if (!list || !moreBtn) return;
+
+    var BATCH = 10;
+    var entries = Array.prototype.slice.call(list.children).filter(function (el) {
+      return el.classList.contains("entry");
+    });
+    var shown = Math.min(BATCH, entries.length);
+    var filtered = false;
+
+    function applyCap() {
+      entries.forEach(function (entry, i) {
+        entry.classList.toggle("is-capped", !filtered && i >= shown);
+      });
+      moreBtn.hidden = filtered || shown >= entries.length;
+    }
+
+    moreBtn.addEventListener("click", function () {
+      shown += BATCH;
+      applyCap();
+    });
+
+    var filterBar = document.querySelector('.filters[data-filter-target="#loglist"]');
+    if (filterBar) {
+      filterBar.addEventListener("click", function (e) {
+        var btn = e.target.closest(".filter-btn");
+        if (!btn) return;
+        filtered = btn.getAttribute("data-filter") !== "all";
+        applyCap();
+      });
+    }
+
+    applyCap();
+  })();
 })();
