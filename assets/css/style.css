@@ -434,7 +434,7 @@ a.card:hover h3 { color: var(--accent-dark); }
   gap: clamp(1.6rem, 4vw, 3.2rem);
 }
 .log-layout__main { flex: 1 1 auto; min-width: 0; max-width: 640px; }
-.log-layout__aside { flex: 0 0 300px; width: 300px; position: sticky; top: 90px; }
+.log-layout__aside { flex: 1 1 340px; max-width: 420px; position: sticky; top: 90px; }
 @media (max-width: 720px) {
   .log-layout { flex-direction: column; }
   .log-layout__main { max-width: none; }
