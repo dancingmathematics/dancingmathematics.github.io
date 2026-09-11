@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Thales Audiovisual</title>
+<style>
+  /* Self-contained — no external font dependencies */
 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --board: #b8cfe8;
+    --wood: #c8a96e;
+    --wood-dark: #9a7040;
+    --text: #1a1a2e;
+    --panel: rgba(255,255,255,0.85);
+    --green: #27ae60;
+    --red: #e74c3c;
+    --orange: #e67e22;
+  }
+
+  body {
+    background: #e8dcc8;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 16px;
+    overflow-x: hidden;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 300;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+  header p {
+    font-size: 0.68rem;
+    color: #5a6a7a;
+    margin-top: 4px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .board-wrap {
+    position: relative;
+    border-radius: 20px;
+    background: var(--wood);
+    padding: 14px;
+    box-shadow: 0 8px 36px rgba(0,0,0,0.22), 0 2px 6px rgba(0,0,0,0.1);
+  }
+  .board-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: repeating-linear-gradient(
+      88deg,
+      transparent, transparent 20px,
+      rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 21px
+    );
+    pointer-events: none;
+  }
+
+  canvas {
+    display: block;
+    border-radius: 10px;
+    touch-action: none;
+    cursor: crosshair;
+  }
+
+  #badge {
+    position: absolute;
+    top: 22px; right: 22px;
+    background: var(--panel);
+    border-radius: 12px;
+    padding: 8px 14px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    pointer-events: none;
+    transition: background 0.2s;
+  }
+  #badge label {
+    display: block;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #8a9aaa;
+    margin-bottom: 2px;
+  }
+  #badge .val {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .statusbar {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 560px;
+  }
+  .chip {
+    background: var(--panel);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .chip .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    transition: background 0.3s;
+  }
+  .chip .dot.on  { background:
